@@ -1,8 +1,15 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
+import "./index.css";
+import Table from "./Table";
 
-function App() {
-  return <div className="App"></div>;
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Table />
+      </div>
+    );
+  }
 }
 
 export default App;
