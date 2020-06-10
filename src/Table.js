@@ -1,29 +1,35 @@
 import React, { Component } from "react";
 
+const TableHeader = () => {
+  return (
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Job</th>
+      </tr>
+    </thead>
+  );
+};
+
+const TableBody = (props) => {
+  const rows = props.userData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.job}</td>
+      </tr>
+    );
+  });
+  return <tbody>{rows}</tbody>;
+};
+
 class Table extends Component {
   render() {
+    const { userData } = this.props;
     return (
       <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Job</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cristina</td>
-            <td>Frontend Developer</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Backend Developer</td>
-          </tr>
-          <tr>
-            <td>Sandra</td>
-            <td>UX designer</td>
-          </tr>
-        </tbody>
+        <TableHeader />
+        <TableBody userData={userData} />
       </table>
     );
   }
