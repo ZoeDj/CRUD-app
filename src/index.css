@@ -21,3 +21,10 @@ td {
   padding: 5px;
   border-bottom: lightgray solid 0.5px;
 }
+button {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

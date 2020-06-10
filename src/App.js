@@ -3,8 +3,8 @@ import "./index.css";
 import Table from "./Table";
 
 class App extends Component {
-  render() {
-    const users = [
+  state = {
+    users: [
       {
         name: "Cristina",
         job: "Frontend Developer",
@@ -17,10 +17,23 @@ class App extends Component {
         name: "Sandra",
         job: "UX Designer",
       },
-    ];
+    ],
+  };
+
+  removeUser = (index) => {
+    const { users } = this.state;
+
+    this.setState({
+      users: users.filter((user, i) => {
+        return i !== index;
+      }),
+    });
+  };
+
+  render() {
     return (
       <div className="container">
-        <Table userData={users} />
+        <Table userData={this.state.users} removeUser={this.removeUser} />
       </div>
     );
   }
