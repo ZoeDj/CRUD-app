@@ -21,10 +21,22 @@ td {
   padding: 5px;
   border-bottom: lightgray solid 0.5px;
 }
-button {
+button,
+[type="button"] {
   padding: 10px;
   background-color: blue;
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+form {
+  padding: 20px;
+}
+input {
+  margin-right: 20px;
+  padding: 3px;
+}
+label {
+  padding: 5px;
 }
